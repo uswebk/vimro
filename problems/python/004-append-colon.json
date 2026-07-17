@@ -1,0 +1,33 @@
+{
+  "id": "python-004",
+  "category": "python",
+  "difficulty": 1,
+  "start":  ["def main()"],
+  "goal":   ["def main():"],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "A:<Esc>", "optimal": true },
+    { "keys": "$a:<Esc>" }
+  ],
+  "tags": ["A", "a", "insert"],
+  "i18n": {
+    "ja": {
+      "title": "行末にコロンを追加する",
+      "description": "関数定義の行末に : を追加して構文エラーを直してください",
+      "hints": ["行末への移動と挿入モード開始が1キーでできる"],
+      "notes": [
+        "A は行末に移動して挿入モードに入る",
+        "$ で行末へ移動し、a でカーソルの後ろに挿入"
+      ]
+    },
+    "en": {
+      "title": "Append a colon",
+      "description": "Add ':' at the end of the def line to fix the syntax error",
+      "hints": ["One key moves to the end of the line and enters insert mode"],
+      "notes": [
+        "A moves to the end of the line and enters insert mode",
+        "$ moves to the end of the line, then a inserts after the cursor"
+      ]
+    }
+  }
+}

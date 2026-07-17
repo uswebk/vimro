@@ -364,7 +364,7 @@ function M.start()
       return
     end
     config.options.lang = choice.code
-    local categories = { "plain" }
+    local categories = engine.list_categories()
     vim.ui.select(categories, { prompt = t("select_category") }, function(category)
       if not category then
         return

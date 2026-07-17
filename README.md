@@ -64,7 +64,7 @@ Notes:
 ## Getting started
 
 1. Run `:Vimro` (in normal mode, press `:`, type `Vimro`, then hit Enter). Or launch it straight from your terminal with `nvim +Vimro` — add `alias vimro='nvim +Vimro'` to your shell config to start drilling with a single word.
-2. Pick a UI language (`ja` / `en`) and a category (MVP ships `plain`).
+2. Pick a UI language (`ja` / `en`) and a category (`plain` or `python`).
 3. The screen splits: edit the **left** buffer until it matches the goal described in the **right** pane.
 4. Clearing is detected automatically; press `n` in the right pane for the next problem.
 

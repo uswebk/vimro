@@ -1,0 +1,33 @@
+{
+  "id": "python-001",
+  "category": "python",
+  "difficulty": 1,
+  "start":  ["print(debug_info)"],
+  "goal":   ["# print(debug_info)"],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "I# <Esc>", "optimal": true },
+    { "keys": "0i# <Esc>" }
+  ],
+  "tags": ["I", "insert", "comment"],
+  "i18n": {
+    "ja": {
+      "title": "行をコメントアウトする",
+      "description": "行頭に # を付けてコメントアウトしてください",
+      "hints": ["行頭に移動して挿入モードに入るコマンドが1キーである"],
+      "notes": [
+        "I は行頭（最初の非空白文字）に移動して挿入モードに入る",
+        "0 で行頭に移動してから i で挿入"
+      ]
+    },
+    "en": {
+      "title": "Comment out a line",
+      "description": "Prepend '# ' to comment out the line",
+      "hints": ["One key moves to the start of the line and enters insert mode"],
+      "notes": [
+        "I moves to the first non-blank character and enters insert mode",
+        "0 moves to column 1, then i inserts before the cursor"
+      ]
+    }
+  }
+}

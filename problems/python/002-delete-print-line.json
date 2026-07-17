@@ -1,0 +1,30 @@
+{
+  "id": "python-002",
+  "category": "python",
+  "difficulty": 1,
+  "start":  ["def add(a, b):", "    print(a)", "    return a + b"],
+  "goal":   ["def add(a, b):", "    return a + b"],
+  "cursor": [2, 1],
+  "solutions": [
+    { "keys": "dd", "optimal": true }
+  ],
+  "tags": ["dd", "delete"],
+  "i18n": {
+    "ja": {
+      "title": "デバッグ用の行を削除する",
+      "description": "print(a) の行を丸ごと削除してください",
+      "hints": ["行全体を消すコマンドがある"],
+      "notes": [
+        "dd はカーソル行を丸ごと削除する"
+      ]
+    },
+    "en": {
+      "title": "Delete a debug line",
+      "description": "Delete the entire 'print(a)' line",
+      "hints": ["There is a command that deletes the whole line"],
+      "notes": [
+        "dd deletes the whole current line"
+      ]
+    }
+  }
+}

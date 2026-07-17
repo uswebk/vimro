@@ -1,0 +1,30 @@
+{
+  "id": "python-009",
+  "category": "python",
+  "difficulty": 3,
+  "start":  ["name = \"foo\""],
+  "goal":   ["name = \"bar\""],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "ci\"bar<Esc>", "optimal": true }
+  ],
+  "tags": ["ci\"", "text-object", "change"],
+  "i18n": {
+    "ja": {
+      "title": "文字列の中身を変更する",
+      "description": "文字列 \"foo\" の中身を bar に変更してください",
+      "hints": ["引用符の内側を対象にするテキストオブジェクトがある。行内なら手前からでも効く"],
+      "notes": [
+        "ci\" は引用符の内側を変更する。カーソルが引用符より手前でも同じ行なら効く"
+      ]
+    },
+    "en": {
+      "title": "Change inside a string",
+      "description": "Change the string contents from \"foo\" to \"bar\"",
+      "hints": ["There is a text object for the inside of quotes; it works even from before the quotes on the same line"],
+      "notes": [
+        "ci\" changes inside the quotes; it works even with the cursor before the quotes on the same line"
+      ]
+    }
+  }
+}

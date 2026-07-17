@@ -6,6 +6,19 @@ function M.root()
   return vim.fn.fnamemodify(src, ":h:h:h")
 end
 
+--- List available categories (subdirectories of problems/)
+function M.list_categories()
+  local dirs = vim.fn.glob(M.root() .. "/problems/*", false, true)
+  local cats = {}
+  for _, dir in ipairs(dirs) do
+    if vim.fn.isdirectory(dir) == 1 then
+      table.insert(cats, vim.fn.fnamemodify(dir, ":t"))
+    end
+  end
+  table.sort(cats)
+  return cats
+end
+
 --- Load problems/<category>/*.json, sorted by difficulty then id
 function M.load_problems(category)
   local pattern = M.root() .. "/problems/" .. category .. "/*.json"

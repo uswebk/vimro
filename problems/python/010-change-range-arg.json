@@ -1,0 +1,33 @@
+{
+  "id": "python-010",
+  "category": "python",
+  "difficulty": 3,
+  "start":  ["for i in range(10):"],
+  "goal":   ["for i in range(n):"],
+  "cursor": [1, 16],
+  "solutions": [
+    { "keys": "ci(n<Esc>", "optimal": true },
+    { "keys": "cibn<Esc>" }
+  ],
+  "tags": ["ci(", "cib", "text-object", "change"],
+  "i18n": {
+    "ja": {
+      "title": "括弧の中身を変更する",
+      "description": "range() の引数 10 を n に変更してください",
+      "hints": ["括弧の内側を対象にするテキストオブジェクトと c を組み合わせる"],
+      "notes": [
+        "ci( は括弧の内側を消して挿入モードに入る。n と打って <Esc>",
+        "cib も同じ。b は ( のエイリアス"
+      ]
+    },
+    "en": {
+      "title": "Change inside parentheses",
+      "description": "Change the range() argument from 10 to n",
+      "hints": ["Combine c with the inner-parentheses text object"],
+      "notes": [
+        "ci( deletes inside the parentheses and enters insert mode; type n then <Esc>",
+        "cib is the same; b is an alias for ("
+      ]
+    }
+  }
+}

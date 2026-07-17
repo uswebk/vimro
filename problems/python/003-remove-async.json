@@ -1,0 +1,33 @@
+{
+  "id": "python-003",
+  "category": "python",
+  "difficulty": 1,
+  "start":  ["async def fetch():"],
+  "goal":   ["def fetch():"],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "dw", "optimal": true },
+    { "keys": "daw" }
+  ],
+  "tags": ["dw", "daw", "delete"],
+  "i18n": {
+    "ja": {
+      "title": "先頭の単語を削除する",
+      "description": "async を削除して同期関数の定義にしてください",
+      "hints": ["単語単位で削除できるコマンドがある"],
+      "notes": [
+        "dw は単語と後ろのスペースをまとめて削除する",
+        "daw は前後の空白ごと単語を削除する。単語の途中からでも効く"
+      ]
+    },
+    "en": {
+      "title": "Delete the first word",
+      "description": "Delete 'async' to make it a regular function definition",
+      "hints": ["There is a command that deletes word by word"],
+      "notes": [
+        "dw deletes the word and its trailing space",
+        "daw deletes the word with surrounding space, even from mid-word"
+      ]
+    }
+  }
+}

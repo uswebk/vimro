@@ -1,0 +1,33 @@
+{
+  "id": "python-006",
+  "category": "python",
+  "difficulty": 2,
+  "start":  ["flag = True"],
+  "goal":   ["flag = False"],
+  "cursor": [1, 8],
+  "solutions": [
+    { "keys": "cwFalse<Esc>", "optimal": true },
+    { "keys": "ciwFalse<Esc>" }
+  ],
+  "tags": ["cw", "ciw", "change"],
+  "i18n": {
+    "ja": {
+      "title": "真偽値を反転する",
+      "description": "True を False に書き換えてください",
+      "hints": ["単語を丸ごと置き換えるには c と単語系モーションを組み合わせる"],
+      "notes": [
+        "cw で True を消して挿入モードへ。False と打って <Esc>",
+        "ciw は単語の途中からでも単語全体を変更できる"
+      ]
+    },
+    "en": {
+      "title": "Flip a boolean",
+      "description": "Change 'True' to 'False'",
+      "hints": ["Combine c with a word motion to replace a whole word"],
+      "notes": [
+        "cw deletes 'True' and enters insert mode; type False then <Esc>",
+        "ciw changes the whole word even from the middle of it"
+      ]
+    }
+  }
+}

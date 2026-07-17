@@ -1,0 +1,33 @@
+{
+  "id": "python-008",
+  "category": "python",
+  "difficulty": 3,
+  "start":  ["print(temp_value)"],
+  "goal":   ["print()"],
+  "cursor": [1, 8],
+  "solutions": [
+    { "keys": "di(", "optimal": true },
+    { "keys": "dib" }
+  ],
+  "tags": ["di(", "dib", "text-object", "delete"],
+  "i18n": {
+    "ja": {
+      "title": "括弧の中身を削除する",
+      "description": "print() の括弧の中身を空にしてください",
+      "hints": ["括弧の内側を対象にするテキストオブジェクトがある"],
+      "notes": [
+        "di( は括弧の内側を削除する（inner parentheses）",
+        "dib も同じ。b は ( のエイリアス"
+      ]
+    },
+    "en": {
+      "title": "Delete inside parentheses",
+      "description": "Empty the parentheses of print()",
+      "hints": ["There is a text object that targets the inside of parentheses"],
+      "notes": [
+        "di( deletes inside the parentheses (inner parentheses)",
+        "dib is the same; b is an alias for ("
+      ]
+    }
+  }
+}
