@@ -1,0 +1,33 @@
+{
+  "id": "plain-003",
+  "category": "plain",
+  "difficulty": 1,
+  "start":  ["Keep this part, delete the rest"],
+  "goal":   ["Keep this part,"],
+  "cursor": [1, 16],
+  "solutions": [
+    { "keys": "D", "optimal": true },
+    { "keys": "d$" }
+  ],
+  "tags": ["D", "d$", "delete"],
+  "i18n": {
+    "ja": {
+      "title": "行末まで削除する",
+      "description": "カーソル位置から行末までを削除して Keep this part, だけ残してください",
+      "hints": ["カーソルから行末までを一発で消すコマンドがある"],
+      "notes": [
+        "D はカーソル位置から行末までを削除する",
+        "d$ も同じ。$ は行末への移動"
+      ]
+    },
+    "en": {
+      "title": "Delete to end of line",
+      "description": "Delete from the cursor to the end of the line, leaving 'Keep this part,'",
+      "hints": ["There is a one-key command to delete from the cursor to the end of the line"],
+      "notes": [
+        "D deletes from the cursor to the end of the line",
+        "d$ does the same; $ is the motion to end of line"
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "plain-001",
+  "category": "plain",
+  "difficulty": 1,
+  "start":  ["The quick brown fox"],
+  "goal":   ["The brown fox"],
+  "cursor": [1, 5],
+  "solutions": [
+    { "keys": "dw",  "optimal": true },
+    { "keys": "daw" }
+  ],
+  "tags": ["dw", "daw", "delete"],
+  "i18n": {
+    "ja": {
+      "title": "単語を削除する",
+      "description": "quick を削除して The brown fox にしてください",
+      "hints": ["d は削除オペレータ。単語単位で消せる"],
+      "notes": [
+        "quick の先頭で dw。単語と末尾スペースをまとめて削除",
+        "a word。前後の空白ごと削除する。位置がずれても効く"
+      ]
+    },
+    "en": {
+      "title": "Delete a word",
+      "description": "Delete 'quick' to get 'The brown fox'",
+      "hints": ["d is the delete operator; it works on text objects like words"],
+      "notes": [
+        "dw at the start of 'quick' deletes the word and its trailing space",
+        "daw ('a word') deletes the word with surrounding space, even mid-word"
+      ]
+    }
+  }
+}

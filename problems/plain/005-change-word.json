@@ -1,0 +1,33 @@
+{
+  "id": "plain-005",
+  "category": "plain",
+  "difficulty": 2,
+  "start":  ["I like cats"],
+  "goal":   ["I like dogs"],
+  "cursor": [1, 8],
+  "solutions": [
+    { "keys": "cwdogs<Esc>", "optimal": true },
+    { "keys": "ciwdogs<Esc>" }
+  ],
+  "tags": ["cw", "ciw", "change"],
+  "i18n": {
+    "ja": {
+      "title": "単語を変更する",
+      "description": "cats を dogs に変更してください",
+      "hints": ["c は変更オペレータ。削除してそのまま挿入モードに入る"],
+      "notes": [
+        "cw で単語を消して挿入モードへ。dogs と打って <Esc>",
+        "ciw は単語の途中からでも単語全体を変更できる"
+      ]
+    },
+    "en": {
+      "title": "Change a word",
+      "description": "Change 'cats' to 'dogs'",
+      "hints": ["c is the change operator: it deletes and enters insert mode"],
+      "notes": [
+        "cw deletes the word and enters insert mode; type dogs then <Esc>",
+        "ciw changes the whole word even from the middle of it"
+      ]
+    }
+  }
+}

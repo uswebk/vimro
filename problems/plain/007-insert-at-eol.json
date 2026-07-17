@@ -1,0 +1,33 @@
+{
+  "id": "plain-007",
+  "category": "plain",
+  "difficulty": 2,
+  "start":  ["Hello world"],
+  "goal":   ["Hello world!"],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "A!<Esc>", "optimal": true },
+    { "keys": "$a!<Esc>" }
+  ],
+  "tags": ["A", "a", "insert"],
+  "i18n": {
+    "ja": {
+      "title": "行末に追記する",
+      "description": "行末に ! を追加してください",
+      "hints": ["行末への移動と挿入モード開始を1キーでできるコマンドがある"],
+      "notes": [
+        "A は行末に移動して挿入モードに入る",
+        "$ で行末へ移動し、a でカーソルの後ろに挿入"
+      ]
+    },
+    "en": {
+      "title": "Append at end of line",
+      "description": "Add '!' at the end of the line",
+      "hints": ["One key moves to the end of the line and enters insert mode"],
+      "notes": [
+        "A moves to the end of the line and enters insert mode",
+        "$ moves to the end of the line, then a inserts after the cursor"
+      ]
+    }
+  }
+}

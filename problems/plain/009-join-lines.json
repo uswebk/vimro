@@ -1,0 +1,30 @@
+{
+  "id": "plain-009",
+  "category": "plain",
+  "difficulty": 3,
+  "start":  ["Hello", "world"],
+  "goal":   ["Hello world"],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "J", "optimal": true }
+  ],
+  "tags": ["J", "join"],
+  "i18n": {
+    "ja": {
+      "title": "行を連結する",
+      "description": "2行を連結して Hello world の1行にしてください",
+      "hints": ["カーソル行と次の行をつなぐコマンドがある"],
+      "notes": [
+        "J はカーソル行と次の行をスペース1つで連結する"
+      ]
+    },
+    "en": {
+      "title": "Join lines",
+      "description": "Join the two lines into one line: 'Hello world'",
+      "hints": ["There is a command that joins the current line with the next"],
+      "notes": [
+        "J joins the current line with the next, separated by a single space"
+      ]
+    }
+  }
+}

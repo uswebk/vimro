@@ -1,0 +1,30 @@
+{
+  "id": "plain-004",
+  "category": "plain",
+  "difficulty": 1,
+  "start":  ["first line", "DELETE ME", "last line"],
+  "goal":   ["first line", "last line"],
+  "cursor": [2, 1],
+  "solutions": [
+    { "keys": "dd", "optimal": true }
+  ],
+  "tags": ["dd", "delete"],
+  "i18n": {
+    "ja": {
+      "title": "行を削除する",
+      "description": "DELETE ME の行を丸ごと削除してください",
+      "hints": ["d を2回打つと？"],
+      "notes": [
+        "dd はカーソル行を丸ごと削除する"
+      ]
+    },
+    "en": {
+      "title": "Delete a line",
+      "description": "Delete the entire 'DELETE ME' line",
+      "hints": ["What happens if you press d twice?"],
+      "notes": [
+        "dd deletes the whole current line"
+      ]
+    }
+  }
+}

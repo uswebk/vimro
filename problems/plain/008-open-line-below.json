@@ -1,0 +1,30 @@
+{
+  "id": "plain-008",
+  "category": "plain",
+  "difficulty": 2,
+  "start":  ["first line", "third line"],
+  "goal":   ["first line", "second line", "third line"],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "osecond line<Esc>", "optimal": true }
+  ],
+  "tags": ["o", "insert"],
+  "i18n": {
+    "ja": {
+      "title": "下に行を挿入する",
+      "description": "first line の下に second line という行を追加してください",
+      "hints": ["カーソル行の下に新しい行を開いて挿入モードに入るコマンドがある"],
+      "notes": [
+        "o は下に新しい行を開いて挿入モードに入る。second line と打って <Esc>"
+      ]
+    },
+    "en": {
+      "title": "Open a line below",
+      "description": "Add a line 'second line' below 'first line'",
+      "hints": ["A command opens a new line below the cursor and enters insert mode"],
+      "notes": [
+        "o opens a new line below and enters insert mode; type second line then <Esc>"
+      ]
+    }
+  }
+}

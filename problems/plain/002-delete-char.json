@@ -1,0 +1,30 @@
+{
+  "id": "plain-002",
+  "category": "plain",
+  "difficulty": 1,
+  "start":  ["The quiick brown fox"],
+  "goal":   ["The quick brown fox"],
+  "cursor": [1, 8],
+  "solutions": [
+    { "keys": "x", "optimal": true }
+  ],
+  "tags": ["x", "delete"],
+  "i18n": {
+    "ja": {
+      "title": "1文字削除する",
+      "description": "余分な i を1文字削除して quick に直してください",
+      "hints": ["カーソル位置の1文字を消すコマンドがある"],
+      "notes": [
+        "x はカーソル位置の1文字を削除する"
+      ]
+    },
+    "en": {
+      "title": "Delete a character",
+      "description": "Delete the extra 'i' to fix the word 'quick'",
+      "hints": ["There is a command that deletes the character under the cursor"],
+      "notes": [
+        "x deletes the character under the cursor"
+      ]
+    }
+  }
+}

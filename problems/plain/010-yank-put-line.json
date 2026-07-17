@@ -1,0 +1,30 @@
+{
+  "id": "plain-010",
+  "category": "plain",
+  "difficulty": 3,
+  "start":  ["duplicate me"],
+  "goal":   ["duplicate me", "duplicate me"],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "yyp", "optimal": true }
+  ],
+  "tags": ["yy", "p", "yank", "put"],
+  "i18n": {
+    "ja": {
+      "title": "行を複製する",
+      "description": "行をコピーして下に貼り付け、同じ行を2行にしてください",
+      "hints": ["y はヤンク（コピー）、p は貼り付け"],
+      "notes": [
+        "yy で行をヤンクし、p でカーソル行の下に貼り付ける"
+      ]
+    },
+    "en": {
+      "title": "Duplicate a line",
+      "description": "Copy the line and paste it below, so the same line appears twice",
+      "hints": ["y is yank (copy) and p is put (paste)"],
+      "notes": [
+        "yy yanks the line, p puts it below the cursor line"
+      ]
+    }
+  }
+}
