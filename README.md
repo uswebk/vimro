@@ -15,6 +15,11 @@ vimro shows you a start text and a goal text. Edit the buffer until it matches t
 - Progress saved locally; keystroke count shown on clear
 - Problems are plain JSON files — easy to contribute
 
+<div align="center">
+<img width="800" alt="Screenshot 2026-07-18 at 0 33 59" src="https://github.com/user-attachments/assets/a5d7a523-a58f-4090-93b9-e141a8fce1f5" />
+</div>
+
+
 ## Requirements
 
 - Neovim 0.9+
