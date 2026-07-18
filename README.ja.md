@@ -105,7 +105,9 @@ require("vimro").setup({
   },
   practice_prefix = "<leader>", -- 練習バッファで同じ操作を使うときの前置キー
                                 -- （例: <leader>n で次へ）。false で無効化
-  pane_width = 42,      -- 右ペインの幅（列数）
+  pane_position = "left", -- 問題ペインの位置: "left" | "right" | "bottom"
+  pane_width = 42,      -- 問題ペインの幅（列数）。left / right のとき
+  pane_height = 14,     -- 問題ペインの高さ（行数）。bottom のとき
 })
 ```
 

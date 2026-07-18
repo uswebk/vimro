@@ -105,7 +105,9 @@ require("vimro").setup({
   },
   practice_prefix = "<leader>", -- prefix for the same actions in the practice buffer
                                 -- (e.g. <leader>n = next); set to false to disable
-  pane_width = 42,      -- width of the problem pane (columns)
+  pane_position = "left", -- where the problem pane sits: "left" | "right" | "bottom"
+  pane_width = 42,      -- width of the problem pane (columns), when left or right
+  pane_height = 14,     -- height of the problem pane (lines), when bottom
 })
 ```
 
