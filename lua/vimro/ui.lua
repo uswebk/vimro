@@ -42,6 +42,34 @@ local function prefix_display()
   return prefix
 end
 
+-- Normalized problem pane position; unknown values fall back to the default
+local function pane_position()
+  local pos = config.options.pane_position
+  if pos == "right" or pos == "bottom" or pos == "left" then
+    return pos
+  end
+  return config.defaults.pane_position
+end
+
+-- Split command that puts the problem pane on the configured side of the practice window
+local function pane_split_cmd()
+  local pos = pane_position()
+  if pos == "bottom" then
+    return "rightbelow split"
+  elseif pos == "right" then
+    return "rightbelow vsplit"
+  end
+  return "leftabove vsplit"
+end
+
+-- Width available for the pane's horizontal rules
+local function pane_rule_width()
+  if valid_win(S.pane_win) then
+    return vim.api.nvim_win_get_width(S.pane_win) - 2
+  end
+  return config.options.pane_width - 4
+end
+
 -- Problem pane rendering -----------------------------------------------------------
 
 local function render_pane()
@@ -58,7 +86,7 @@ local function render_pane()
   table.insert(lines, string.format("%s %d/%d: %s%s",
     t("problem"), S.index, #S.problems, title, solved and (" " .. t("solved_mark")) or ""))
   table.insert(lines, string.format("%s: %d  [%s]", t("difficulty"), problem.difficulty or 0, problem.id))
-  table.insert(lines, string.rep("─", math.max(10, config.options.pane_width - 4)))
+  table.insert(lines, string.rep("─", math.max(10, pane_rule_width())))
   table.insert(lines, "")
   for _, line in ipairs(vim.split(text.description or "", "\n")) do
     table.insert(lines, line)
@@ -96,7 +124,7 @@ local function render_pane()
     table.insert(lines, "")
   end
 
-  table.insert(lines, string.rep("─", math.max(10, config.options.pane_width - 4)))
+  table.insert(lines, string.rep("─", math.max(10, pane_rule_width())))
   table.insert(lines, t("keys_help") .. ":")
   table.insert(lines, string.format("  %s: %s   %s: %s", k.next, t("key_next"), k.prev, t("key_prev")))
   table.insert(lines, string.format("  %s: %s   %s: %s", k.reset, t("key_reset"), k.hint, t("key_hint")))
@@ -246,7 +274,7 @@ local function setup_layout()
   vim.cmd("tabnew")
   S.tab = vim.api.nvim_get_current_tabpage()
 
-  -- Left: practice buffer
+  -- Practice buffer
   S.practice_win = vim.api.nvim_get_current_win()
   S.practice_buf = vim.api.nvim_get_current_buf()
   vim.bo[S.practice_buf].buftype = "nofile"
@@ -254,8 +282,8 @@ local function setup_layout()
   vim.bo[S.practice_buf].bufhidden = "wipe"
   vim.api.nvim_buf_set_name(S.practice_buf, "vimro://practice")
 
-  -- Right: problem pane
-  vim.cmd("rightbelow vsplit")
+  -- Problem pane
+  vim.cmd(pane_split_cmd())
   S.pane_win = vim.api.nvim_get_current_win()
   S.pane_buf = vim.api.nvim_create_buf(false, true)
   vim.api.nvim_win_set_buf(S.pane_win, S.pane_buf)
@@ -264,11 +292,16 @@ local function setup_layout()
   vim.bo[S.pane_buf].bufhidden = "wipe"
   vim.bo[S.pane_buf].modifiable = false
   vim.api.nvim_buf_set_name(S.pane_buf, "vimro://problem")
-  vim.wo[S.pane_win].winfixwidth = true
   vim.wo[S.pane_win].number = false
   vim.wo[S.pane_win].relativenumber = false
   vim.wo[S.pane_win].wrap = true
-  vim.api.nvim_win_set_width(S.pane_win, config.options.pane_width)
+  if pane_position() == "bottom" then
+    vim.wo[S.pane_win].winfixheight = true
+    vim.api.nvim_win_set_height(S.pane_win, config.options.pane_height)
+  else
+    vim.wo[S.pane_win].winfixwidth = true
+    vim.api.nvim_win_set_width(S.pane_win, config.options.pane_width)
+  end
 
   -- Problem pane keymaps
   local k = config.options.keys
