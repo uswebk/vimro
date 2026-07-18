@@ -1,7 +1,6 @@
 local config = require("vimro.config")
 local engine = require("vimro.engine")
 local i18n = require("vimro.i18n")
-local keys = require("vimro.keys")
 
 local M = {}
 
@@ -151,7 +150,6 @@ local function load_current()
   S.cleared = false
   S.show_hints = false
   S.show_solutions = false
-  keys.reset()
 
   vim.api.nvim_buf_set_lines(S.practice_buf, 0, -1, false, problem.start)
   vim.bo[S.practice_buf].modified = false
@@ -178,7 +176,7 @@ local function check_clear()
   if engine.is_cleared(buf_lines, problem.goal) then
     S.cleared = true
     engine.mark_solved(S.progress, problem.id)
-    vim.notify(t("cleared_with_keys", keys.count), vim.log.levels.INFO, { title = "vimro" })
+    vim.notify(t("cleared"), vim.log.levels.INFO, { title = "vimro" })
     render_pane()
   end
 end
@@ -238,7 +236,6 @@ function M.quit()
     return
   end
   S.active = false
-  keys.stop()
 
   -- If vimro was started from an empty Neovim, quit Neovim entirely
   -- (qa is non-forcing, so unsaved changes still block it as usual)
@@ -371,7 +368,6 @@ local function begin_session(category)
   S.progress = engine.load_progress()
   S.active = true
   setup_layout()
-  keys.start(S.practice_buf)
   load_current()
 end
 

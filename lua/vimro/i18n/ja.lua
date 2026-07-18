@@ -5,7 +5,6 @@ return {
   difficulty = "難易度",
   solved_mark = "[解答済み]",
   cleared = "クリア！",
-  cleared_with_keys = "クリア！（%d 打鍵）",
   press_next = "このペインで n を押すと次の問題へ進みます。",
   hints = "ヒント",
   solutions = "解法",

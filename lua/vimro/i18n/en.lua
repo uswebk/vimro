@@ -5,7 +5,6 @@ return {
   difficulty = "Difficulty",
   solved_mark = "[solved]",
   cleared = "Cleared!",
-  cleared_with_keys = "Cleared! (%d keystrokes)",
   press_next = "Press 'n' in this pane for the next problem.",
   hints = "Hints",
   solutions = "Solutions",

@@ -12,7 +12,7 @@ vimro shows you a start text and a goal text. Edit the buffer until it matches t
 - Any key sequence counts — only the final buffer state is checked
 - Hints and solutions on demand (`?` / `s`), never shown by default
 - Japanese / English UI, per-problem translations with fallback
-- Progress saved locally; keystroke count shown on clear
+- Progress saved locally
 - Problems are plain JSON files — easy to contribute
 
 <div align="center">
