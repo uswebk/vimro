@@ -12,9 +12,9 @@ M.defaults = {
     list = "g",
     quit = "q",
   },
-  -- Prefix for the same actions in the practice buffer (e.g. <leader>n = next),
+  -- Prefix for the same actions outside the problem pane (e.g. <leader>n = next),
   -- so you don't have to switch panes. Set to false to disable.
-  practice_prefix = "<leader>",
+  buffer_prefix = "<leader>",
   -- Where the problem pane sits: "left" | "right" | "bottom"
   pane_position = "left",
   -- Width of the problem pane (columns), used when it sits left or right

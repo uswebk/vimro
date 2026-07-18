@@ -28,9 +28,9 @@ local function valid_win(win)
   return win and vim.api.nvim_win_is_valid(win)
 end
 
--- Display name for practice_prefix; <leader> resolves to the actual key ("Space" for space)
+-- Display name for buffer_prefix; <leader> resolves to the actual key ("Space" for space)
 local function prefix_display()
-  local prefix = config.options.practice_prefix
+  local prefix = config.options.buffer_prefix
   if not prefix or prefix == false then
     return nil
   end
@@ -315,9 +315,9 @@ local function setup_layout()
     vim.keymap.set("n", lhs, fn, { buffer = S.pane_buf, nowait = true, silent = true })
   end
 
-  -- Provide the same actions in the practice buffer behind a prefix
+  -- Provide the same actions outside the problem pane behind a prefix
   -- (taking plain n or r would break the very Vim behavior being trained)
-  local prefix = config.options.practice_prefix
+  local prefix = config.options.buffer_prefix
   if prefix and prefix ~= false then
     for lhs, fn in pairs(maps) do
       vim.keymap.set("n", prefix .. lhs, fn, { buffer = S.practice_buf, nowait = true, silent = true })
