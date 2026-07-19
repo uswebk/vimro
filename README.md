@@ -17,7 +17,7 @@ vimro shows you a start text and a goal text. Edit the buffer until it matches t
 - Problems are plain JSON files — easy to contribute
 
 <div align="center">
-<img width="800" alt="Screenshot 2026-07-18 at 0 33 59" src="https://github.com/user-attachments/assets/a5d7a523-a58f-4090-93b9-e141a8fce1f5" />
+<img width="996" height="654" alt="Untitled" src="https://github.com/user-attachments/assets/c634237f-3156-4f21-a12a-886b0b80c725" />
 </div>
 
 
