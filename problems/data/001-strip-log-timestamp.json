@@ -1,0 +1,33 @@
+{
+  "id": "data-001",
+  "category": "data",
+  "difficulty": 2,
+  "start":  ["2026-07-18 10:22:31 ERROR failed to connect"],
+  "goal":   ["ERROR failed to connect"],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "d2W", "optimal": true },
+    { "keys": "2Wd0" }
+  ],
+  "tags": ["dW", "d0", "delete", "log"],
+  "i18n": {
+    "ja": {
+      "title": "ログの日時を削除する",
+      "description": "先頭の日付と時刻を削除して ERROR failed to connect にしてください",
+      "hints": ["W は空白区切りの WORD 単位で進む。- や : を含む塊も1つとして扱える"],
+      "notes": [
+        "行頭で d2W。日付と時刻を WORD 2 つとしてまとめて削除する",
+        "2W で ERROR の先頭まで進んでから d0 でカーソル手前を削除する"
+      ]
+    },
+    "en": {
+      "title": "Strip the log timestamp",
+      "description": "Delete the leading date and time to get 'ERROR failed to connect'",
+      "hints": ["W moves by whitespace-separated WORDs, so a chunk with - or : counts as one"],
+      "notes": [
+        "d2W at the start of the line deletes the date and time as two WORDs",
+        "2W jumps to 'ERROR', then d0 deletes everything before the cursor"
+      ]
+    }
+  }
+}

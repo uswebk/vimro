@@ -1,0 +1,33 @@
+{
+  "id": "data-003",
+  "category": "data",
+  "difficulty": 3,
+  "start":  ["1,\"Tokyo\",jp"],
+  "goal":   ["1,\"Osaka\",jp"],
+  "cursor": [1, 4],
+  "solutions": [
+    { "keys": "ci\"Osaka<Esc>", "optimal": true },
+    { "keys": "lciwOsaka<Esc>" }
+  ],
+  "tags": ["ci\"", "ciw", "change", "csv"],
+  "i18n": {
+    "ja": {
+      "title": "引用符付きフィールドを書き換える",
+      "description": "Tokyo を Osaka に変えて 1,\"Osaka\",jp にしてください",
+      "hints": ["i\" は引用符の内側を指すテキストオブジェクト。引用符自体は残る"],
+      "notes": [
+        "ci\" で引用符の中身だけを変更する。引用符の上でも内側でも効く",
+        "l で Tokyo に入り ciw で単語を変更する"
+      ]
+    },
+    "en": {
+      "title": "Change a quoted field",
+      "description": "Change 'Tokyo' to 'Osaka' to get '1,\"Osaka\",jp'",
+      "hints": ["i\" is the text object for the inside of a quoted string; the quotes stay"],
+      "notes": [
+        "ci\" changes just the quoted content, whether you sit on a quote or inside",
+        "l steps into 'Tokyo', then ciw changes the word"
+      ]
+    }
+  }
+}

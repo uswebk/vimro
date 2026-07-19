@@ -1,0 +1,33 @@
+{
+  "id": "data-004",
+  "category": "data",
+  "difficulty": 3,
+  "start":  ["1,Tokyo,", "jp,active"],
+  "goal":   ["1,Tokyo,jp,active"],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "gJ", "optimal": true },
+    { "keys": "Jx" }
+  ],
+  "tags": ["gJ", "join", "csv"],
+  "i18n": {
+    "ja": {
+      "title": "折り返された行をつなぐ",
+      "description": "2 行に分かれた CSV を 1 行にして 1,Tokyo,jp,active にしてください",
+      "hints": ["J は行を結合するが空白を1つ入れる。空白を入れたくないときは別のコマンドがある"],
+      "notes": [
+        "gJ は空白を挟まずにそのまま結合する。CSV ではこちらが正しい",
+        "J で結合すると空白が入るので、続けて消す必要がある"
+      ]
+    },
+    "en": {
+      "title": "Join a wrapped row",
+      "description": "Join the two lines into one to get '1,Tokyo,jp,active'",
+      "hints": ["J joins lines but inserts a space; another command joins without one"],
+      "notes": [
+        "gJ joins the lines as-is, with no space inserted — what CSV needs",
+        "J inserts a space, so it has to be deleted afterwards"
+      ]
+    }
+  }
+}

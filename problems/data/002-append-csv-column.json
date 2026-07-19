@@ -1,0 +1,33 @@
+{
+  "id": "data-002",
+  "category": "data",
+  "difficulty": 1,
+  "start":  ["id,name,email"],
+  "goal":   ["id,name,email,status"],
+  "cursor": [1, 1],
+  "solutions": [
+    { "keys": "A,status<Esc>", "optimal": true },
+    { "keys": "$a,status<Esc>" }
+  ],
+  "tags": ["A", "append", "csv"],
+  "i18n": {
+    "ja": {
+      "title": "CSV の列を追加する",
+      "description": "ヘッダー行の末尾に ,status を足して id,name,email,status にしてください",
+      "hints": ["A は行末に移動してから挿入を始める"],
+      "notes": [
+        "A で行末に追記。どの列にいても1打で行末に飛べる",
+        "$ で行末に移動し a でその文字の後ろから挿入する"
+      ]
+    },
+    "en": {
+      "title": "Append a CSV column",
+      "description": "Add ',status' at the end of the header to get 'id,name,email,status'",
+      "hints": ["A jumps to the end of the line and starts inserting"],
+      "notes": [
+        "A appends at the end of the line from anywhere in it",
+        "$ moves to the last character, then a inserts after it"
+      ]
+    }
+  }
+}
