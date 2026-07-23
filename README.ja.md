@@ -118,7 +118,7 @@ require("vimro").setup({
 
 - 言語非依存フィールドを埋める: `id` / `category` / `difficulty` / `start` / `goal` / `solutions`（`keys` は `<Esc>` などの vim 表記で、常に 1 行目 1 文字目から始まる。最短解に `"optimal": true`）/ `tags`
 - `i18n.ja` と `i18n.en` の両方を埋める（`title` / `description` / `hints` / `notes`）。`notes[i]` は `solutions[i]` の説明
-- 各 `solutions[].keys` が本当に `start` を `goal` に変形することを Neovim で確認する
+- `nvim --headless -u NONE -l scripts/verify_problems.lua` で検証する。全 `solutions[].keys` を実際に再生し、スキーマも合わせて確認する（同じスクリプトが CI でも走る）
 - 1 問につき狙う操作は 1 つに絞り、`description` と `goal` を必ず一致させる
 
 完全な例は `problems/plain/001-delete-word.json` を参照してください。

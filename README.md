@@ -118,7 +118,7 @@ Problems live in `problems/<category>/NNN-<slug>.json`, one file per problem:
 
 - Fill the language-independent fields: `id`, `category`, `difficulty`, `start`, `goal`, `solutions` (`keys` in Vim notation like `<Esc>`, starting from the first character of the buffer, mark the shortest with `"optimal": true`), `tags`.
 - Fill both `i18n.ja` and `i18n.en` (`title`, `description`, `hints`, `notes`). `notes[i]` describes `solutions[i]`.
-- Verify in Neovim that each `solutions[].keys` really transforms `start` into `goal`.
+- Verify with `nvim --headless -u NONE -l scripts/verify_problems.lua`, which replays every `solutions[].keys` and checks the schema. The same script runs in CI on every pull request.
 - Aim for one target operation per problem, and keep `description` consistent with `goal`.
 
 See `problems/plain/001-delete-word.json` for a complete example.
