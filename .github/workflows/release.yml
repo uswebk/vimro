@@ -1,0 +1,96 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: stable
+
+      - name: Verify before releasing
+        run: |
+          nvim --headless -u NONE -l scripts/verify_problems.lua
+          nvim --headless -u NONE -l scripts/load_check.lua
+
+      - name: Skip if this commit is already tagged
+        id: tagged
+        run: |
+          if git tag --points-at HEAD | grep -q '^v'; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Decide the next version
+        id: version
+        if: steps.tagged.outputs.skip == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          labels=$(gh pr list --state merged --search "$GITHUB_SHA" \
+            --json labels --jq '.[0].labels[].name' 2>/dev/null || true)
+          echo "labels: ${labels:-<none>}"
+
+          bump=patch
+          if grep -qx 'breaking' <<<"$labels"; then
+            bump=major
+          elif grep -qx 'enhancement' <<<"$labels"; then
+            bump=minor
+          fi
+
+          prev=$(git tag --list 'v*' --sort=-v:refname | head -1)
+          prev=${prev:-v0.0.0}
+          IFS=. read -r major minor patch <<<"${prev#v}"
+
+          case "$bump" in
+            major) major=$((major + 1)); minor=0; patch=0 ;;
+            minor) minor=$((minor + 1)); patch=0 ;;
+            patch) patch=$((patch + 1)) ;;
+          esac
+
+          next="v${major}.${minor}.${patch}"
+          echo "$prev -> $next ($bump)"
+          {
+            echo "prev=$prev"
+            echo "next=$next"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Tag and release
+        if: steps.tagged.outputs.skip == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREV: ${{ steps.version.outputs.prev }}
+          NEXT: ${{ steps.version.outputs.next }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "$NEXT" -m "$NEXT"
+          git push origin "$NEXT"
+
+          gh api "repos/$GITHUB_REPOSITORY/releases/generate-notes" \
+            -f tag_name="$NEXT" -f previous_tag_name="$PREV" \
+            --jq .body > notes.md
+          ./scripts/problem_delta.sh "$PREV" >> notes.md
+
+          gh release create "$NEXT" --title "$NEXT" --notes-file notes.md
