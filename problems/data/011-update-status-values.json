@@ -1,0 +1,52 @@
+{
+  "id": "data-011",
+  "category": "data",
+  "difficulty": 2,
+  "start": [
+    "1,alice,pending",
+    "2,bob,done",
+    "3,carol,pending"
+  ],
+  "goal": [
+    "1,alice,done",
+    "2,bob,done",
+    "3,carol,done"
+  ],
+  "solutions": [
+    {
+      "keys": ":%s/pending/done/<CR>",
+      "optimal": true
+    },
+    {
+      "keys": ":%s/pending/done/g<CR>"
+    }
+  ],
+  "tags": [
+    ":s",
+    "substitute"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "ステータスをまとめて更新する",
+      "description": "すべての pending を done に置き換えてください",
+      "hints": [
+        "1行に1回しか出てこない語なら g フラグは要らない"
+      ],
+      "notes": [
+        ":%s/pending/done/ は各行の最初の一致だけを置換する。1行1回なのでこれで十分",
+        "g フラグを付けても結果は同じだが、この行では不要"
+      ]
+    },
+    "en": {
+      "title": "Update the status values",
+      "description": "Replace every 'pending' with 'done'",
+      "hints": [
+        "The g flag is unnecessary when the word appears once per line"
+      ],
+      "notes": [
+        ":%s/pending/done/ substitutes the first match on each line, which is enough here",
+        "Adding the g flag gives the same result but is not needed on these lines"
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "data-012",
+  "category": "data",
+  "difficulty": 3,
+  "start": [
+    "alice,1",
+    "bob,2",
+    "carol,3"
+  ],
+  "goal": [
+    "1,alice",
+    "2,bob",
+    "3,carol"
+  ],
+  "solutions": [
+    {
+      "keys": ":%s/\\(\\w\\+\\),\\(\\w\\+\\)/\\2,\\1/<CR>",
+      "optimal": true
+    },
+    {
+      "keys": ":%s/^\\([^,]*\\),\\(.*\\)$/\\2,\\1/<CR>"
+    }
+  ],
+  "tags": [
+    ":s",
+    "substitute",
+    "regex",
+    "capture-group"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "2つの列を入れ替える",
+      "description": "名前と数値の列を入れ替えて 1,alice の並びにしてください",
+      "hints": [
+        "\\( \\) で囲んだ部分は置換後に \\1 \\2 で参照できる"
+      ],
+      "notes": [
+        "\\(\\w\\+\\),\\(\\w\\+\\) で2つの列を捕まえ、\\2,\\1 で順番を逆にして書き戻す",
+        "[^,]* と .* を使っても同じように列を捕まえられる"
+      ]
+    },
+    "en": {
+      "title": "Swap the two columns",
+      "description": "Swap the name and number columns so each line reads '1,alice'",
+      "hints": [
+        "Groups wrapped in \\( \\) can be referenced as \\1 and \\2 in the replacement"
+      ],
+      "notes": [
+        "\\(\\w\\+\\),\\(\\w\\+\\) captures both columns and \\2,\\1 writes them back in reverse order",
+        "[^,]* and .* capture the same two columns"
+      ]
+    }
+  }
+}
