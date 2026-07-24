@@ -1,0 +1,54 @@
+{
+  "id": "data-010",
+  "category": "data",
+  "difficulty": 2,
+  "start": [
+    "id,name,",
+    "1,alice,",
+    "2,bob,"
+  ],
+  "goal": [
+    "id,name",
+    "1,alice",
+    "2,bob"
+  ],
+  "solutions": [
+    {
+      "keys": ":%s/,$//<CR>",
+      "optimal": true
+    },
+    {
+      "keys": ":%normal $x<CR>"
+    }
+  ],
+  "tags": [
+    ":s",
+    "substitute",
+    "regex",
+    "csv"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "行末のカンマを消す",
+      "description": "各行の末尾のカンマを削除してください",
+      "hints": [
+        "置換パターンの $ は行末にマッチする"
+      ],
+      "notes": [
+        ":%s/,$// は全行の行末カンマだけを空文字に置換する",
+        ":%normal $x で全行に対して $x（行末へ移動して1文字削除）を実行しても同じ"
+      ]
+    },
+    "en": {
+      "title": "Strip the trailing comma",
+      "description": "Delete the trailing comma on every line",
+      "hints": [
+        "$ in a substitute pattern matches the end of the line"
+      ],
+      "notes": [
+        ":%s/,$// replaces only the end-of-line comma with nothing on every line",
+        ":%normal $x runs $x (jump to end of line, delete one char) on every line for the same result"
+      ]
+    }
+  }
+}

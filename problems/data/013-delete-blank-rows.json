@@ -1,0 +1,55 @@
+{
+  "id": "data-013",
+  "category": "data",
+  "difficulty": 3,
+  "start": [
+    "1,alice",
+    "",
+    "2,bob",
+    "",
+    "3,carol"
+  ],
+  "goal": [
+    "1,alice",
+    "2,bob",
+    "3,carol"
+  ],
+  "solutions": [
+    {
+      "keys": ":g/^$/d<CR>",
+      "optimal": true
+    },
+    {
+      "keys": "jddjdd"
+    }
+  ],
+  "tags": [
+    ":g",
+    "global",
+    "dd"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "空行を取り除く",
+      "description": "データの間にある空行をすべて削除してください",
+      "hints": [
+        ":g/pattern/d はパターンに一致する行をすべて削除する"
+      ],
+      "notes": [
+        ":g/^$/d は空行（行頭がすぐ行末の行）だけを対象に d を実行する",
+        "空行が少なければ j で移動して dd を繰り返してもよい"
+      ]
+    },
+    "en": {
+      "title": "Remove the blank rows",
+      "description": "Delete every blank line between the data rows",
+      "hints": [
+        ":g/pattern/d deletes every line matching the pattern"
+      ],
+      "notes": [
+        ":g/^$/d runs d on every empty line (start of line immediately followed by end of line)",
+        "With only a couple of blanks you can also just move with j and repeat dd"
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "data-009",
+  "category": "data",
+  "difficulty": 2,
+  "start": [
+    "1;alice;active",
+    "2;bob;active",
+    "3;carol;inactive"
+  ],
+  "goal": [
+    "1,alice,active",
+    "2,bob,active",
+    "3,carol,inactive"
+  ],
+  "solutions": [
+    {
+      "keys": ":%s/;/,/g<CR>",
+      "optimal": true
+    },
+    {
+      "keys": ":1,3s/;/,/g<CR>"
+    }
+  ],
+  "tags": [
+    ":s",
+    "substitute",
+    "csv"
+  ],
+  "i18n": {
+    "ja": {
+      "title": "区切り文字を一括で置換する",
+      "description": "すべてのセミコロンをカンマに置き換えてください",
+      "hints": [
+        ":%s/old/new/g は全行のすべての一致を置換する"
+      ],
+      "notes": [
+        ":%s/;/,/g の % は全行、末尾の g は行内のすべての一致を意味する",
+        ":1,3s/;/,/g のように範囲を数字で指定しても同じ結果になる"
+      ]
+    },
+    "en": {
+      "title": "Replace every delimiter",
+      "description": "Replace every semicolon with a comma",
+      "hints": [
+        ":%s/old/new/g substitutes every match on every line"
+      ],
+      "notes": [
+        "In :%s/;/,/g the % means all lines and the trailing g means every match in each line",
+        "An explicit range like :1,3s/;/,/g does the same thing"
+      ]
+    }
+  }
+}
